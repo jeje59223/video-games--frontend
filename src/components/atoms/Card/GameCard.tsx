@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {Card, CardActionArea, CardContent, CardMedia, Chip, Stack, Tooltip, Typography} from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
+import Tag from "../Tag/Tag";
 
 export interface GameCardProps {
   background_image: string;
@@ -49,7 +50,8 @@ const GameCard: React.FC<GameCardProps> = ({
           <Stack direction="row" flexWrap="wrap">
           {genres.map((genre) => {
             return (
-              <Chip size="small" color="info" label={genre} sx={{bgcolor: "text.primary", margin: 0.5}} />
+                <Tag label={genre} size="small" variant="outlined"/>
+              //<Chip size="small" color="info" label={genre} sx={{bgcolor: "text.primary", margin: 0.5}} />
             )
           })}
           </Stack>
