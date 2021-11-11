@@ -1,13 +1,11 @@
 .heart {
-  position: relative;
-  top: -37px;
-  left: 307px;
-  background: rgba(200, 200, 200, 0.3);
-  width: 32px;
-  height: 32px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(200, 200, 200, 0.6);
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
-  /* background-color: rgba(200,200,200,0.5); */
-  /* opacity: 0.5; */
   display: flex;
   justify-content: center;
   align-items: center;

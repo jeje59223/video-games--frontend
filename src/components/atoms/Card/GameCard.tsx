@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Card, CardActionArea, CardContent, CardMedia, Chip, Stack, Tooltip, Typography} from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-// import './GameCard.scss';
+import './GameCard.scss';
 
 export interface GameCardProps {
   background_image: string;
@@ -23,17 +23,18 @@ const GameCard: React.FC<GameCardProps> = ({
   }
 
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: "text.secondary", color: "white" }}>
+    <Card className="GameCard" sx={{ maxWidth: 345, bgcolor: "text.secondary", color: "white" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="220"
           image={background_image}
           alt={title}
+          className="GameCard-image"
           style={{position: "relative"}}
         />
         <Tooltip title={isClick ? "Delete to Favorites" : "Add to Favorites"} placement="top" arrow>
-          <div className="heart" style={{position: "absolute", top: "6px", right: "6px", background : "rgba(200,200,200,0.6)", width: "31px", height: "31px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <div className="heart" >
             <FavoriteIcon onClick={addFavorite} color={isClick ? "error" : "inherit"}/>
           </div>
         </Tooltip>
