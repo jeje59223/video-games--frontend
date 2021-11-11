@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {Card, CardActionArea, CardContent, CardMedia, Chip, Stack, Tooltip, Typography} from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
@@ -16,14 +16,14 @@ const GameCard: React.FC<GameCardProps> = ({
   summary,
   genres,
 }) => {
-  const [isClick, setIsClick] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   const addFavorite = () => {
-    setIsClick(!isClick);
+    setClicked(!clicked);
   }
 
   return (
-    <Card className="GameCard" sx={{ maxWidth: 345, bgcolor: "text.secondary", color: "white" }}>
+    <Card className="GameCard">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -31,11 +31,10 @@ const GameCard: React.FC<GameCardProps> = ({
           image={background_image}
           alt={title}
           className="GameCard-image"
-          style={{position: "relative"}}
         />
-        <Tooltip title={isClick ? "Delete to Favorites" : "Add to Favorites"} placement="top" arrow>
-          <div className="heart" >
-            <FavoriteIcon onClick={addFavorite} color={isClick ? "error" : "inherit"}/>
+        <Tooltip title={clicked ? "Delete to Favorites" : "Add to Favorites"} placement="top" arrow>
+          <div className="GameCard-heart" >
+            <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"}/>
           </div>
         </Tooltip>
         <CardContent>

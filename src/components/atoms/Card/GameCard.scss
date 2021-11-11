@@ -1,12 +1,23 @@
-.heart {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background: rgba(200, 200, 200, 0.6);
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.GameCard {
+  max-width: 345px;
+  background: #494949 !important;
+  color: white !important;
+
+  &-image {
+    position: relative;
+  }
+
+  &-heart {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(200, 200, 200, 0.6);
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
