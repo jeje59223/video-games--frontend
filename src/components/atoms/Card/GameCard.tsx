@@ -17,10 +17,9 @@ const GameCard: React.FC<GameCardProps> = ({
   genres,
 }) => {
   const [isClick, setIsClick] = useState(false);
-  console.log(isClick)
+
   const addFavorite = () => {
-    setIsClick(!isClick)
-    console.log(isClick)
+    setIsClick(!isClick);
   }
 
   return (
@@ -30,10 +29,11 @@ const GameCard: React.FC<GameCardProps> = ({
           component="img"
           height="220"
           image={background_image}
-          alt="green iguana"
+          alt={title}
+          style={{position: "relative"}}
         />
         <Tooltip title={isClick ? "Delete to Favorites" : "Add to Favorites"} placement="top" arrow>
-          <div className="heart" style={{position: "relative", top: "-30px", left: "310px", background: "#666666", width: "24px", clipPath: "polygon(M15,45 A30,30,0,0,1,75,45 A30,30,0,0,1,135,45 Q135,90,75,130 Q15,90,15,45 Z)"}}>
+          <div className="heart" style={{position: "absolute", top: "6px", right: "6px", background : "rgba(200,200,200,0.6)", width: "31px", height: "31px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center"}}>
             <FavoriteIcon onClick={addFavorite} color={isClick ? "error" : "inherit"}/>
           </div>
         </Tooltip>
