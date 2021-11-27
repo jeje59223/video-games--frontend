@@ -50,8 +50,7 @@ const GameCard: React.FC<GameCardProps> = ({
           <Stack direction="row" flexWrap="wrap">
           {genres.map((genre) => {
             return (
-                <Tag label={genre} size="small" variant="outlined"/>
-              //<Chip size="small" color="info" label={genre} sx={{bgcolor: "text.primary", margin: 0.5}} />
+                <Tag label={genre} size="small" variant="filled"/>
             )
           })}
           </Stack>
