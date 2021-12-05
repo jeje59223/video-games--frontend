@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 export interface BtnProps {
   variant: 'text' | 'outlined' | 'contained';
   color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   size: 'small' | 'medium' | 'large';
   label: string;
 }

@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import {Story} from "@storybook/react";
 
 export default {
-  title: 'Button Material UI',
+  title: 'Atoms/Button Material UI',
   component: Btn,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

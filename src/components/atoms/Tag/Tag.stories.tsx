@@ -5,7 +5,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import {Story} from "@storybook/react";
 
 export default {
-    title: 'Tag',
+    title: 'Atoms/Tag',
     component: Tag,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

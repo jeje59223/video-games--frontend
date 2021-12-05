@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Card, CardActionArea, CardContent, CardMedia, Chip, Stack, Tooltip, Typography} from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
-import Tag from "../Tag/Tag";
+import Tag from "../../atoms/Tag/Tag";
 
 export interface GameCardProps {
   background_image: string;

@@ -22,7 +22,7 @@ const game = {
 
 
 export default {
-  title: 'GameCard',
+  title: 'Molecules/GameCard',
   component: GameCard,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
