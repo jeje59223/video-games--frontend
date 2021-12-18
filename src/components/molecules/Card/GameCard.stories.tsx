@@ -17,6 +17,7 @@ const game = {
       name: "Shooter"
     }
   ],
+  rating: 4.1,
 }
 
 
@@ -39,5 +40,6 @@ GamesCard.args = {
   title: game.title,
   background_image: game.background_image,
   summary: game.summary,
-  genres: listGenres
+  genres: listGenres,
+  rating: game.rating,
 };

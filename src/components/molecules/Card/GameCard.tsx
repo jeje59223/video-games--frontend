@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import {Card, CardActionArea, CardContent, CardMedia, Chip, Stack, Tooltip, Typography} from "@mui/material";
+import {Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography} from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from "../../atoms/Tag/Tag";
+import CircleRating from "../../atoms/CircleRating/CircleRating";
 
 export interface GameCardProps {
   background_image: string;
   title: string;
   summary: string;
   genres: string[];
+  rating: number;
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -16,6 +18,7 @@ const GameCard: React.FC<GameCardProps> = ({
   title,
   summary,
   genres,
+  rating,
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -28,7 +31,7 @@ const GameCard: React.FC<GameCardProps> = ({
       <CardActionArea>
         <CardMedia
           component="img"
-          height="220"
+          height="200"
           image={background_image}
           alt={title}
           className="GameCard-image"
@@ -38,6 +41,7 @@ const GameCard: React.FC<GameCardProps> = ({
             <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"}/>
           </div>
         </Tooltip>
+        <CircleRating rating={rating}/>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

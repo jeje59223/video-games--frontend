@@ -1,0 +1,26 @@
+.CircleRating {
+  margin: 10px auto;
+  max-height: 90px;
+  z-index: 2;
+
+  &-around {
+    stroke:#444444;
+    fill: none;
+    stroke-width: 2.8;
+    // background-color: white;
+  }
+
+  &-percent {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+
+  text {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bolder;
+    fill: white;
+  }
+}

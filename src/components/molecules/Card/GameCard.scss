@@ -19,5 +19,14 @@
     justify-content: center;
     align-items: center;
   }
+
+  .CircleRating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 140px;
+    left: 6px;
+  }
 }
 
