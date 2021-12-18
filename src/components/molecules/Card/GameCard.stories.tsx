@@ -17,7 +17,7 @@ const game = {
       name: "Shooter"
     }
   ],
-  rating: 4.1,
+  rating: 4.4,
 }
 
 
