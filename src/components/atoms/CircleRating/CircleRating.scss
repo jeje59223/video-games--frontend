@@ -1,7 +1,8 @@
 .CircleRating {
-  margin: 10px auto;
-  max-height: 90px;
   z-index: 2;
+  background-size: auto;
+  width: 2.25rem;
+  height: 2.25rem;
 
   &-around {
     stroke:#444444;

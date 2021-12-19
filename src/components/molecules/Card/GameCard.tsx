@@ -11,6 +11,7 @@ export interface GameCardProps {
   summary: string;
   genres: string[];
   rating: number;
+  rating_count: number;
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -19,6 +20,7 @@ const GameCard: React.FC<GameCardProps> = ({
   summary,
   genres,
   rating,
+  rating_count,
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -36,12 +38,12 @@ const GameCard: React.FC<GameCardProps> = ({
           alt={title}
           className="GameCard-image"
         />
-        <Tooltip title={clicked ? "Delete to Favorites" : "Add to Favorites"} placement="top" arrow>
+        <Tooltip title={clicked ? "Delete to Favorites" : "Add to Favorites"} placement="top-end" arrow>
           <div className="GameCard-heart" >
-            <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"}/>
+            <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"} />
           </div>
         </Tooltip>
-        <CircleRating rating={rating}/>
+        <CircleRating rating={rating} ratings_count={rating_count} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

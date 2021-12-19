@@ -18,6 +18,7 @@ const game = {
     }
   ],
   rating: 4.4,
+  ratings_count: 641,
 }
 
 
@@ -42,4 +43,5 @@ GamesCard.args = {
   summary: game.summary,
   genres: listGenres,
   rating: game.rating,
+  rating_count: game.ratings_count,
 };
