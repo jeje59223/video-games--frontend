@@ -1,5 +1,6 @@
 .GameCard {
   max-width: 345px;
+  min-height: 416px;
   background: #494949 !important;
   color: white !important;
 
@@ -25,8 +26,32 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 160px;
-    left: 4px;
+    top: 205px;
+    left: 16px;
+  }
+
+  .css-o69gx8-MuiCardMedia-root {
+    height: 250px;
+  }
+
+  .css-1kqosj6-MuiChip-root {
+    margin-top: 8px;
+  }
+
+  &-title {
+    min-height: 60px;
+    padding: 16px 16px 0 16px !important;
+  }
+
+  &-footer {
+    padding: 0 16px 16px 16px !important;
+    min-height: 64px;
+    align-items: center;
+    display: flex
+  }
+
+  hr {
+    margin: 0 16px 8px 16px;
   }
 }
 

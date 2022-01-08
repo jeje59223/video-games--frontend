@@ -8,7 +8,7 @@ import CircleRating from "../../atoms/CircleRating/CircleRating";
 export interface GameCardProps {
   background_image: string;
   title: string;
-  summary: string;
+  summary?: string;
   genres: string[];
   rating: number;
   rating_count: number;
@@ -44,7 +44,7 @@ const GameCard: React.FC<GameCardProps> = ({
           </div>
         </Tooltip>
         <CircleRating rating={rating} ratings_count={rating_count} />
-        <CardContent>
+        <CardContent className="GameCard-title">
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
@@ -52,7 +52,8 @@ const GameCard: React.FC<GameCardProps> = ({
             {summary}
           </Typography>
         </CardContent>
-        <CardContent>
+        <hr/>
+        <CardContent className="GameCard-footer">
           <Stack direction="row" flexWrap="wrap">
           {genres.map((genre) => {
             return (
