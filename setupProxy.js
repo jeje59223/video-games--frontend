@@ -17,6 +17,5 @@ module.exports = (app) => {
     };
     app.use(createProxyMiddleware(reactUri, proxyOptions));
   }
-
-  defineProxy(process.env.BFF_COLLABORATOR_SPACE_URL, '/api');
+  defineProxy(process.env.BBF_VIDEO_GAMES, '/api');
 };
