@@ -1,8 +1,6 @@
 .GameCard {
   max-width: 345px;
   min-height: 416px;
-  background: #494949 !important;
-  color: white !important;
 
   &-image {
     position: relative;
@@ -30,11 +28,16 @@
     left: 16px;
   }
 
-  .css-o69gx8-MuiCardMedia-root {
+  .MuiCardMedia-root {
     height: 250px;
   }
 
-  .css-1kqosj6-MuiChip-root {
+  .MuiButtonBase-root {
+    background: #494949;
+    color: white;
+  }
+
+  .MuiChip-root {
     margin-top: 8px;
   }
 
