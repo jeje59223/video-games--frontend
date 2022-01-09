@@ -22,7 +22,7 @@ export const GamesCard = Template.bind({});
 GamesCard.args = {
   title: game.name,
   background_image: game.background_image,
-  // summary: game.summary,
+  // description: game.summary,
   genres: listGenres,
   rating: game.rating,
   rating_count: game.ratings_count,

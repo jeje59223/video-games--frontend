@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography} from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from "../../atoms/Tag/Tag";
@@ -8,7 +8,7 @@ import CircleRating from "../../atoms/CircleRating/CircleRating";
 export interface GameCardProps {
   background_image: string;
   title: string;
-  summary?: string;
+  description?: string;
   genres: string[];
   rating: number;
   rating_count: number;
@@ -17,7 +17,7 @@ export interface GameCardProps {
 const GameCard: React.FC<GameCardProps> = ({
   background_image,
   title,
-  summary,
+  description,
   genres,
   rating,
   rating_count,
@@ -49,7 +49,7 @@ const GameCard: React.FC<GameCardProps> = ({
             {title}
           </Typography>
           <Typography variant="body2" color="white">
-            {summary}
+            {description}
           </Typography>
         </CardContent>
         <hr/>
