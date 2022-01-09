@@ -3,7 +3,7 @@ import GameCard, {GameCardProps} from './GameCard';
 import { games } from '../../../../.storybook/data/games';
 import {Story} from "@storybook/react";
 
-const game = games[1];
+const game = games[2];
 
 export default {
   title: 'Organisms/GameCard',
@@ -16,7 +16,7 @@ export default {
 
 const Template: Story<GameCardProps> = (args) => <GameCard {...args} />;
 
-const listGenres = game.genres.map((genre: { name: string; }) => genre.name)
+const listGenres = game.genres.map((genre) => genre.name)
 
 export const GamesCard = Template.bind({});
 GamesCard.args = {
