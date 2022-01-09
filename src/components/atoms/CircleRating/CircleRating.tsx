@@ -1,16 +1,12 @@
 import React from "react";
 import { Tooltip } from '@mui/material';
-import {addColorRating} from './addColorRating';
+import { addColorRating } from './addColorRating';
+import { convertsRatingToPercent } from "./convertsRatingToPercent";
 import './CircleRating.scss';
 
 export interface CircleRatingProps {
     rating: number;
     ratings_count: number;
-}
-
-export function convertsRatingToPercent(rating: number): number {
-    rating = rating * 2 * 10;
-    return Math.round(rating * 100) / 100;
 }
 
 const CircleRating: React.FC<CircleRatingProps> = ({
