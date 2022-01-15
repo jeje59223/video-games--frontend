@@ -1,13 +1,13 @@
-export const addColorRating = (percentageRating: number): string => {
+export const generateClassName = (percentageRating: number): string => {
     let colorRating: string;
     if (percentageRating >= 85) {
-        colorRating = 'percentVeryGood';
+        colorRating = 'percent-very-good';
     } else if (percentageRating >= 70 && percentageRating < 85) {
-        colorRating = 'percentGood';
+        colorRating = 'percent-good';
     } else if (percentageRating < 70 && percentageRating >= 50) {
-        colorRating = 'percentMedium';
+        colorRating = 'percent-medium';
     } else {
-        colorRating = 'percentBad';
+        colorRating = 'percent-bad';
     }
     return colorRating;
 }
