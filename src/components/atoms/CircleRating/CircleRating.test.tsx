@@ -1,4 +1,6 @@
 import React from 'react';
+import {act} from 'react-dom/test-utils';
+import * as ReactDOM from "react-dom";
 import { generateClassName } from './generateClassName';
 import { convertsRatingToPercent } from "./convertsRatingToPercent";
 

@@ -3,7 +3,7 @@ import GameCard, {GameCardProps} from './GameCard';
 import { games } from '../../../../.storybook/data/games';
 import {Story} from "@storybook/react";
 
-const game = games[4];
+const game = games[3];
 
 export default {
   title: 'Organisms/GameCard',
@@ -23,7 +23,7 @@ GamesCard.args = {
   title: game.name,
   background_image: game.background_image,
   // description: game.summary,
-  genres: listGenres,
+  // genres: game.genres,
   rating: game.rating,
   rating_count: game.ratings_count,
 };

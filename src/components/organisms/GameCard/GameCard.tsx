@@ -4,12 +4,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from "../../atoms/Tag/Tag";
 import CircleRating from "../../atoms/CircleRating/CircleRating";
+import {Genre} from "../../../models/game";
 
 export interface GameCardProps {
   background_image: string;
   title: string;
   description?: string;
-  genres: string[];
+  genres?: string[];
   rating: number;
   rating_count: number;
 }
@@ -55,11 +56,11 @@ const GameCard: React.FC<GameCardProps> = ({
         <hr/>
         <CardContent className="GameCard-footer">
           <Stack direction="row" flexWrap="wrap">
-          {genres.map((genre) => {
+          {genres ? genres.map((genre) => {
             return (
                 <Tag label={genre} size="small" variant="filled"/>
             )
-          })}
+          }): null}
           </Stack>
         </CardContent>
       </CardActionArea>
