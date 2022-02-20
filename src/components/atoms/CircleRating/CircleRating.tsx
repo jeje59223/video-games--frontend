@@ -1,5 +1,5 @@
 import React from "react";
-import {Toolbar, Tooltip} from '@mui/material';
+import { Tooltip } from '@mui/material';
 import './CircleRating.scss';
 
 export interface CircleRatingProps {
