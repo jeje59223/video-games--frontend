@@ -1,0 +1,26 @@
+.HomeTemplate {
+  margin: 0 40px;
+  &-title {
+    font-size: 49px;
+    font-weight: lighter;
+    margin: 31px 0 20px 0;
+  }
+  &-subtitle {
+    font-size: 34px;
+    margin: 20px 0 20px 0;
+    font-weight: lighter;
+  }
+  &-favorites-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  hr {
+
+  }
+
+  .GameCard {
+    margin: 10px;
+  }
+}

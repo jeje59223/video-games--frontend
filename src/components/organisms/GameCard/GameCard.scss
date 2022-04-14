@@ -1,7 +1,6 @@
 .GameCard {
-  max-width: 345px;
-  background: #494949 !important;
-  color: white !important;
+  width: 300px;
+  min-height: 416px;
 
   &-image {
     position: relative;
@@ -12,8 +11,8 @@
     top: 6px;
     right: 6px;
     background: rgba(200, 200, 200, 0.6);
-    width: 33px;
-    height: 33px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -25,8 +24,37 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 160px;
-    left: 4px;
+    top: 205px;
+    left: 16px;
+  }
+
+  .MuiCardMedia-root {
+    height: 250px;
+  }
+
+  .MuiButtonBase-root {
+    background: #494949;
+    color: white;
+  }
+
+  .MuiChip-root {
+    margin-top: 8px;
+  }
+
+  &-title {
+    min-height: 65px;
+    padding: 16px 16px 0 16px !important;
+  }
+
+  &-footer {
+    padding: 0 16px 16px 16px !important;
+    min-height: 64px;
+    align-items: center;
+    display: flex
+  }
+
+  hr {
+    margin: 0 16px 8px 16px;
   }
 }
 

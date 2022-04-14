@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import {Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography} from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from "../../atoms/Tag/Tag";
 import CircleRating from "../../atoms/CircleRating/CircleRating";
+import {Genre} from "../../../models/game";
 
 export interface GameCardProps {
   background_image: string;
   title: string;
-  summary: string;
-  genres: string[];
+  description?: string;
+  genres?: string[];
   rating: number;
   rating_count: number;
 }
@@ -17,7 +18,7 @@ export interface GameCardProps {
 const GameCard: React.FC<GameCardProps> = ({
   background_image,
   title,
-  summary,
+  description,
   genres,
   rating,
   rating_count,
@@ -44,21 +45,22 @@ const GameCard: React.FC<GameCardProps> = ({
           </div>
         </Tooltip>
         <CircleRating rating={rating} ratings_count={rating_count} />
-        <CardContent>
+        <CardContent className="GameCard-title">
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
           <Typography variant="body2" color="white">
-            {summary}
+            {description}
           </Typography>
         </CardContent>
-        <CardContent>
+        <hr/>
+        <CardContent className="GameCard-footer">
           <Stack direction="row" flexWrap="wrap">
-          {genres.map((genre) => {
+          {genres ? genres.map((genre) => {
             return (
                 <Tag label={genre} size="small" variant="filled"/>
             )
-          })}
+          }): null}
           </Stack>
         </CardContent>
       </CardActionArea>
