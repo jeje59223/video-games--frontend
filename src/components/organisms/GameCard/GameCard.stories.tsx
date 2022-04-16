@@ -23,7 +23,7 @@ GamesCard.args = {
   title: game.name,
   background_image: game.background_image,
   // description: game.summary,
-  // genres: game.genres,
+  genres: listGenres,
   rating: game.rating,
   rating_count: game.ratings_count,
 };
