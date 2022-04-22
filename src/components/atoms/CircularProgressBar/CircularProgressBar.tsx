@@ -7,7 +7,6 @@ import "react-circular-progressbar/dist/styles.css";
 import { Tooltip } from "@mui/material";
 import { convertsRatingToPercent } from "./convertsRatingToPercent";
 import { generateRatingColor } from "./generateRatingColor";
-import { generateIcon } from "./generateIcon";
 
 export interface CircularProgressbarProps {
     rating: number;
@@ -19,7 +18,6 @@ const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
     ratings_count,
 }) => {
     const percentageRating = convertsRatingToPercent(rating);
-    const icon = generateIcon(percentageRating);
 
     return (
         <Tooltip title={`There were ${ratings_count} ratings `} placement="top-start" arrow>
@@ -29,11 +27,6 @@ const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
                     pathColor: `${generateRatingColor(percentageRating)}`,
                     trailColor: "grey",
                 })}>
-                    <img
-                        // style={{ width: 15, marginTop: -5 }}
-                        src={icon}
-                        alt="emoji"
-                    />
                     <div className="CircleProgressbar-rating">
                         <strong>{percentageRating}</strong><span>%</span>
                     </div>
