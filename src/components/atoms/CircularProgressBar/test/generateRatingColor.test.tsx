@@ -17,8 +17,4 @@ describe('<CircleRating>', () => {
         const colorRating = generateRatingColor(87);
         expect(colorRating).toEqual('#FFD700');
     });
-    // test('should return a rating to percent', () => {
-    //     const convertsRating = convertsRatingToPercent(1);
-    //     expect(convertsRating).toEqual(20);
-    // })
 });
