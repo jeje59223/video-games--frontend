@@ -3,8 +3,7 @@ import { Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typograph
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from "../../atoms/Tag/Tag";
-import CircleRating from "../../atoms/CircleRating/CircleRating";
-import {Genre} from "../../../models/game";
+import CircularProgressbar from "../../atoms/CircularProgressBar/CircularProgressBar";
 
 export interface GameCardProps {
   background_image: string;
@@ -44,7 +43,7 @@ const GameCard: React.FC<GameCardProps> = ({
             <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"} />
           </div>
         </Tooltip>
-        <CircleRating rating={rating} ratings_count={rating_count} />
+        <CircularProgressbar rating={rating} ratings_count={rating_count} />
         <CardContent className="GameCard-title">
           <Typography gutterBottom variant="h5" component="div">
             {title}
