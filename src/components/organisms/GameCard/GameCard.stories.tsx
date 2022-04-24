@@ -16,14 +16,12 @@ export default {
 
 const Template: Story<GameCardProps> = (args) => <GameCard {...args} />;
 
-const listGenres = game.genres.map((genre) => genre.name)
-
 export const GamesCard = Template.bind({});
 GamesCard.args = {
   title: game.name,
   background_image: game.background_image,
   // description: game.summary,
-  genres: listGenres,
+  genres: game.genres.map((genre) => genre.name),
   rating: game.rating,
   rating_count: game.ratings_count,
 };

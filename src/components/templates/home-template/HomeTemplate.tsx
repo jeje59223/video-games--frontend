@@ -21,6 +21,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
             {
                 latestFavoritesGames.map((game) => (
                     <GameCard
+                        key={game.id}
                         background_image={game.background_image}
                         title={game.name}
                         genres={game.genres.map(genre => genre.name)}

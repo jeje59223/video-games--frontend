@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 .GameCard {
-  width: 300px;
+  max-width: 300px;
   min-height: 416px;
 
   &-image {
@@ -55,6 +55,11 @@
 
   .MuiChip-root {
     margin-top: 8px;
+    font-size: 0.8rem;
+  }
+
+  .MuiTypography-root {
+    font-size: 1.2rem;
   }
 
   &-title {
@@ -66,7 +71,7 @@
     padding: 0 16px 16px 16px !important;
     min-height: 64px;
     align-items: center;
-    display: flex
+    display: flex;
   }
 
   hr {

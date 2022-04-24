@@ -1,6 +1,5 @@
 import React from "react";
 import Tag, {TagProps} from "./Tag";
-import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
 import {Story} from "@storybook/react";
 

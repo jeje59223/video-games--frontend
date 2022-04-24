@@ -55,9 +55,9 @@ const GameCard: React.FC<GameCardProps> = ({
         <hr/>
         <CardContent className="GameCard-footer">
           <Stack direction="row" flexWrap="wrap">
-          {genres ? genres.map((genre) => {
+          {genres ? genres.map((genre, index) => {
             return (
-                <Tag label={genre} size="small" variant="filled"/>
+                <Tag key={index} label={genre} size="small" variant="filled"/>
             )
           }): null}
           </Stack>
