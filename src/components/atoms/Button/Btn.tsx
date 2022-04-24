@@ -14,11 +14,11 @@ const Btn: React.FC<BtnProps> = ({
   color,
   size,
   icon,
-  label
+  label,
 }) => {
   return (
   <Button variant={variant} color={color} size={size} startIcon={icon}>{label}</Button>
-  )
-}
+  );
+};
 
 export default Btn;

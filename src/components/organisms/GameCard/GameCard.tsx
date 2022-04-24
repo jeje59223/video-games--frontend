@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography } from "@mui/material";
+import React, { useState } from 'react';
+import {
+  Card, CardActionArea, CardContent, CardMedia, Stack, Tooltip, Typography,
+} from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
-import Tag from "../../atoms/Tag/Tag";
-import CircularProgressbar from "../../atoms/CircularProgressBar/CircularProgressBar";
+import Tag from '../../atoms/Tag/Tag';
+import CircularProgressbar from '../../atoms/CircularProgressBar/CircularProgressBar';
 
 export interface GameCardProps {
   background_image: string;
@@ -26,7 +28,7 @@ const GameCard: React.FC<GameCardProps> = ({
 
   const addFavorite = () => {
     setClicked(!clicked);
-  }
+  };
 
   return (
     <Card className="GameCard">
@@ -38,9 +40,9 @@ const GameCard: React.FC<GameCardProps> = ({
           alt={title}
           className="GameCard-image"
         />
-        <Tooltip title={clicked ? "Delete to Favorites" : "Add to Favorites"} placement="top-end" arrow>
+        <Tooltip title={clicked ? 'Delete to Favorites' : 'Add to Favorites'} placement="top-end" arrow>
           <div className="GameCard-heart" >
-            <FavoriteIcon onClick={addFavorite} color={clicked ? "error" : "inherit"} />
+            <FavoriteIcon onClick={addFavorite} color={clicked ? 'error' : 'inherit'} />
           </div>
         </Tooltip>
         <CircularProgressbar rating={rating} ratings_count={rating_count} />
@@ -55,16 +57,14 @@ const GameCard: React.FC<GameCardProps> = ({
         <hr/>
         <CardContent className="GameCard-footer">
           <Stack direction="row" flexWrap="wrap">
-          {genres ? genres.map((genre, index) => {
-            return (
+          {genres ? genres.map((genre, index) => (
                 <Tag key={index} label={genre} size="small" variant="filled"/>
-            )
-          }): null}
+          )) : null}
           </Stack>
         </CardContent>
       </CardActionArea>
     </Card>
-  )
-}
+  );
+};
 
 export default GameCard;

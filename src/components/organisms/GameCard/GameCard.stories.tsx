@@ -1,7 +1,7 @@
 import React from 'react';
-import GameCard, {GameCardProps} from './GameCard';
+import { Story } from '@storybook/react';
+import GameCard, { GameCardProps } from './GameCard';
 import { games } from '../../../../.storybook/data/games';
-import {Story} from "@storybook/react";
 
 const game = games[3];
 
