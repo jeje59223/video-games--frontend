@@ -27,9 +27,11 @@ module.exports = {
         '@typescript-eslint'
     ],
     'rules': {
-        'quotes': ['error', 'single'],
-        'semi': [2, 'always'],
-        'comma-dangle': ['error', 'never'],
+        'quotes': [ 'error', 'single' ],
+        'semi': [ 2, 'always' ],
+        'comma-dangle': [ 'error', 'never' ],
+        'array-bracket-spacing': [ 'error', 'always' ],
+        'object-curly-spacing': [ 'error', 'always' ],
         '@typescript-eslint/ban-types': [
             'error',
             {

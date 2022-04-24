@@ -22,7 +22,7 @@ const GameCard: React.FC<GameCardProps> = ({
   rating,
   rating_count
 }) => {
-  const [clicked, setClicked] = useState(false);
+  const [ clicked, setClicked ] = useState(false);
 
   const addFavorite = () => {
     setClicked(!clicked);

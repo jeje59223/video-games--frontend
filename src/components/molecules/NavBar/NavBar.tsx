@@ -14,14 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './NavBar.scss';
 
-const pages = ['Games', 'Platforms', 'Favorites Games'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [ 'Games', 'Platforms', 'Favorites Games' ];
+const settings = [ 'Profile', 'Account', 'Dashboard', 'Logout' ];
 
 const ResponsiveAppBar = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    const [ anchorElNav, setAnchorElNav ] = React.useState<null | HTMLElement>(
         null
     );
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    const [ anchorElUser, setAnchorElUser ] = React.useState<null | HTMLElement>(
         null
     );
 

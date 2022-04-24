@@ -1,8 +1,8 @@
 import React from 'react';
-import Btn, {BtnProps} from './Btn';
+import Btn, { BtnProps } from './Btn';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import {Story} from '@storybook/react';
+import { Story } from '@storybook/react';
 
 export default {
   title: 'Atoms/Button Material UI',

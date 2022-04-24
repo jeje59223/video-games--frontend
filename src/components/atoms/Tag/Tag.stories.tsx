@@ -1,7 +1,7 @@
 import React from 'react';
-import Tag, {TagProps} from './Tag';
+import Tag, { TagProps } from './Tag';
 import DoneIcon from '@mui/icons-material/Done';
-import {Story} from '@storybook/react';
+import { Story } from '@storybook/react';
 
 export default {
     title: 'Atoms/Tag',
