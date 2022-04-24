@@ -9,8 +9,8 @@ export default {
   component: Btn,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 };
 
 const Template: Story<BtnProps> = (args) => <Btn {...args} />;

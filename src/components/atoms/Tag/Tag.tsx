@@ -19,7 +19,7 @@ const Tag: React.FC<TagProps> = ({
 }) => {
     return (
         <Chip color={color} icon={icon} label={label} size={size} variant={variant} />
-    )
-}
+    );
+};
 
 export default Tag;

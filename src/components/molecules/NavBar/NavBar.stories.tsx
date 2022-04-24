@@ -6,8 +6,8 @@ export default {
     title: 'Molecules/NavBar',
     component: NavBar,
     argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+        backgroundColor: { control: 'color' }
+    }
 };
 
 const Template: Story = args => <NavBar {...args} />;

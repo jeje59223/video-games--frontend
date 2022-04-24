@@ -15,7 +15,7 @@ export interface CircularProgressbarProps {
 
 const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
     rating,
-    ratings_count,
+    ratings_count
 }) => {
     const percentageRating = convertsRatingToPercent(rating);
 
@@ -25,7 +25,7 @@ const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
                 <CircularProgressbarWithChildren background value={percentageRating} styles={buildStyles({
                     backgroundColor: '#494949',
                     pathColor: `${generateRatingColor(percentageRating)}`,
-                    trailColor: 'grey',
+                    trailColor: 'grey'
                 })}>
                     <div className="CircleProgressbar-rating">
                         <strong>{percentageRating}</strong><span>%</span>
@@ -33,7 +33,7 @@ const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
                 </CircularProgressbarWithChildren>
             </div>
         </Tooltip>
-    )
-}
+    );
+};
 
-export default CircularProgressbar
+export default CircularProgressbar;

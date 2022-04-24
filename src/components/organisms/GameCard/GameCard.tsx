@@ -20,13 +20,13 @@ const GameCard: React.FC<GameCardProps> = ({
   description,
   genres,
   rating,
-  rating_count,
+  rating_count
 }) => {
   const [clicked, setClicked] = useState(false);
 
   const addFavorite = () => {
     setClicked(!clicked);
-  }
+  };
 
   return (
     <Card className="GameCard">
@@ -58,13 +58,13 @@ const GameCard: React.FC<GameCardProps> = ({
           {genres ? genres.map((genre, index) => {
             return (
                 <Tag key={index} label={genre} size="small" variant="filled"/>
-            )
+            );
           }): null}
           </Stack>
         </CardContent>
       </CardActionArea>
     </Card>
-  )
-}
+  );
+};
 
 export default GameCard;

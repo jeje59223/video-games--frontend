@@ -9,9 +9,8 @@ export interface HomeTemplateProps {
 }
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({
-    latestFavoritesGames = games,
+    latestFavoritesGames = games
 }) => {
-
     return (
         <div className="HomeTemplate">
             <h1 className="HomeTemplate-title">Welcome in your <strong style={{ color: '#494949'}}>Games Catalog</strong></h1>
@@ -32,5 +31,5 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
             }
             </div>
         </div>
-        )
-}
+    );
+};

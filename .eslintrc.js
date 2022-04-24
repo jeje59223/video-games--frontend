@@ -17,12 +17,19 @@ module.exports = {
         'ecmaVersion': 'latest',
         'sourceType': 'module'
     },
+    'settings': {
+        'react': {
+            'version': 'detect'
+        }
+    },
     'plugins': [
         'react',
         '@typescript-eslint'
     ],
     'rules': {
         'quotes': ['error', 'single'],
+        'semi': [2, 'always'],
+        'comma-dangle': ['error', 'never'],
         '@typescript-eslint/ban-types': [
             'error',
             {
@@ -33,4 +40,4 @@ module.exports = {
             }
         ]
     }
-}
+};

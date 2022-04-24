@@ -10,8 +10,8 @@ export default {
   component: GameCard,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 };
 
 const Template: Story<GameCardProps> = (args) => <GameCard {...args} />;
@@ -23,5 +23,5 @@ GamesCard.args = {
   // description: game.summary,
   genres: game.genres.map((genre) => genre.name),
   rating: game.rating,
-  rating_count: game.ratings_count,
+  rating_count: game.ratings_count
 };

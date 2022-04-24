@@ -7,4 +7,5 @@ export const generateRatingColor = (percentageRating: number): string => {
         return '#fd7e14';
     }
     return '#dc3545';
-}
+};
+

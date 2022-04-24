@@ -6,10 +6,9 @@ import {Story} from '@storybook/react';
 export default {
     title: 'Atoms/Tag',
     component: Tag,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+        backgroundColor: { control: 'color' }
+    }
 };
 
 const Template: Story<TagProps> = (args) => <Tag {...args} />;
@@ -18,8 +17,8 @@ export const TagWithoutIcon = Template.bind({});
 TagWithoutIcon.args = {
     color: 'error',
     label: 'Danger',
-    size: 'medium',
-}
+    size: 'medium'
+};
 
 export const TagWithIcon = Template.bind({});
 TagWithIcon.args = {
@@ -27,7 +26,7 @@ TagWithIcon.args = {
     icon: <DoneIcon/>,
     label: 'Success',
     size: 'small'
-}
+};
 
 export const TagWithIconOutlined = Template.bind({});
 TagWithIconOutlined.args = {
@@ -36,12 +35,12 @@ TagWithIconOutlined.args = {
     label: 'Action',
     size: 'small',
     variant: 'outlined'
-}
+};
 
 export const TagWithColor = Template.bind({});
 TagWithColor.args = {
     label: 'Action',
     size: 'small',
     variant: 'outlined'
-}
+};
 
