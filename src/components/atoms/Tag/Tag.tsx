@@ -1,6 +1,6 @@
-import { Chip } from "@mui/material";
-import React from "react";
-import "./Tag.scss";
+import { Chip } from '@mui/material';
+import React from 'react';
+import './Tag.scss';
 
 export interface TagProps {
     color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';

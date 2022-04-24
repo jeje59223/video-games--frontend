@@ -78,7 +78,7 @@ export interface Tag {
     id: number,
     name: string,
     slug: string,
-    language: "eng" | "rus",
+    language: 'eng' | 'rus',
     games_count: number,
     image_background: string,
 }

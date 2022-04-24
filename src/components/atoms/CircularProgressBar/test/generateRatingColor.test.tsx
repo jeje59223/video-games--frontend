@@ -1,4 +1,4 @@
-import { generateRatingColor } from "../generateRatingColor";
+import { generateRatingColor } from '../generateRatingColor';
 
 describe('<CircleRating>', () => {
     test('should return percentBad when a rating is less than 50', function () {

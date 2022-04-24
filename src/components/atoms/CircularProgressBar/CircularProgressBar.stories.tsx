@@ -1,5 +1,5 @@
-import React from "react";
-import CircularProgressbar from "./CircularProgressBar";
+import React from 'react';
+import CircularProgressbar from './CircularProgressBar';
 import { Story } from '@storybook/react';
 
 export default {

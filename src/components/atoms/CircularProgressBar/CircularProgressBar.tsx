@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
     buildStyles,
     CircularProgressbarWithChildren
-} from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { Tooltip } from "@mui/material";
-import { convertsRatingToPercent } from "./convertsRatingToPercent";
-import { generateRatingColor } from "./generateRatingColor";
+} from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { Tooltip } from '@mui/material';
+import { convertsRatingToPercent } from './convertsRatingToPercent';
+import { generateRatingColor } from './generateRatingColor';
 
 export interface CircularProgressbarProps {
     rating: number;
@@ -23,9 +23,9 @@ const CircularProgressbar: React.FC<CircularProgressbarProps> = ({
         <Tooltip title={`There were ${ratings_count} ratings `} placement="top-start" arrow>
             <div className="CircleProgressbar">
                 <CircularProgressbarWithChildren background value={percentageRating} styles={buildStyles({
-                    backgroundColor: "#494949",
+                    backgroundColor: '#494949',
                     pathColor: `${generateRatingColor(percentageRating)}`,
-                    trailColor: "grey",
+                    trailColor: 'grey',
                 })}>
                     <div className="CircleProgressbar-rating">
                         <strong>{percentageRating}</strong><span>%</span>

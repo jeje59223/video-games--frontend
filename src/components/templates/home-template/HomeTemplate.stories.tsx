@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from "@storybook/react";
+import { Story, Meta } from '@storybook/react';
 import { games } from '../../../../.storybook/data/games';
 import {HomeTemplate, HomeTemplateProps} from './HomeTemplate';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Game } from "../../../models/game";
-import GameCard from "../../organisms/GameCard/GameCard";
+import { Game } from '../../../models/game';
+import GameCard from '../../organisms/GameCard/GameCard';
 import { games } from '../../../../.storybook/data/games';
 import './HomeTemplate.scss';
 
@@ -14,7 +14,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
 
     return (
         <div className="HomeTemplate">
-            <h1 className="HomeTemplate-title">Welcome in your <strong style={{ color: "#494949"}}>Games Catalog</strong></h1>
+            <h1 className="HomeTemplate-title">Welcome in your <strong style={{ color: '#494949'}}>Games Catalog</strong></h1>
             <hr />
             <h2 className="HomeTemplate-subtitle">Here are your latest favorite games</h2>
             <div className="HomeTemplate-favorites-games">
