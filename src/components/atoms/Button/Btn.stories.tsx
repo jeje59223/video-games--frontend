@@ -1,8 +1,8 @@
 import React from 'react';
-import Btn, {BtnProps} from "./Btn";
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import {Story} from "@storybook/react";
+import { Story } from '@storybook/react';
+import Btn, { BtnProps } from './Btn';
 
 export default {
   title: 'Atoms/Button Material UI',
@@ -17,27 +17,27 @@ const Template: Story<BtnProps> = (args) => <Btn {...args} />;
 
 export const BtnOutlined = Template.bind({});
 BtnOutlined.args = {
-  variant: "outlined",
+  variant: 'outlined',
   label: 'Submit',
   color: 'primary',
-  size: 'small'
+  size: 'small',
 };
 
 export const BtnContained = Template.bind({});
 BtnContained.args = {
-  variant: "contained",
+  variant: 'contained',
   label: 'Submit',
   color: 'success',
-  size: 'medium'
+  size: 'medium',
 };
 
 export const BtnContainedLargeWithIcon = Template.bind({});
 BtnContainedLargeWithIcon.args = {
-  variant: "contained",
+  variant: 'contained',
   label: 'Delete',
   color: 'error',
   icon: <DeleteIcon/>,
-  size: 'large'
+  size: 'large',
 };
 
 export const BtnSmallWithIcon = Template.bind({});
@@ -45,5 +45,5 @@ BtnSmallWithIcon.args = {
   label: 'Add',
   color: 'primary',
   icon: <AddIcon/>,
-  size: 'small'
+  size: 'small',
 };
