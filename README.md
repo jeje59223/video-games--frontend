@@ -23,6 +23,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Run the storybook.
 Open [http://localhost:6006](http://localhost:6006) to view it in the browser
 
+### `npm run lint`
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
