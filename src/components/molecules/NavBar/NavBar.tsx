@@ -14,7 +14,25 @@ import MenuItem from '@mui/material/MenuItem';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './NavBar.scss';
 
-const pages = ['Games', 'Platforms', 'Favorites Games'];
+const pages = [
+  {
+    name: 'Home',
+    url: '/',
+  },
+  {
+    name: 'Games',
+    url: '/games',
+  },
+  {
+    name: 'Platforms',
+    url: '/platforms',
+  },
+  {
+    name: 'Favorites Games',
+    url: '/favorites-games',
+  },
+];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -42,7 +60,7 @@ const ResponsiveAppBar = () => {
 
   return (
         <AppBar position="static">
-            <Container maxWidth="xl" className="NavBar">
+            <Container maxWidth={false} className="NavBar">
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"
@@ -83,9 +101,11 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <a key={page.name} style={{ textDecoration: 'none' }} href={page.url}>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
+                                </a>
                             ))}
                         </Menu>
                     </Box>
@@ -99,13 +119,14 @@ const ResponsiveAppBar = () => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
+                            <a key={page.name} href={page.url}>
                             <Button
-                                key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
+                            </a>
                         ))}
                     </Box>
 
