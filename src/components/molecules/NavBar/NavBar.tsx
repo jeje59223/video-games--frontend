@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './NavBar.scss';
+import { useState } from 'react';
 
 const pages = [
   {
@@ -35,11 +36,11 @@ const pages = [
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+const NavBar = () => {
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
     null,
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(
     null,
   );
 
@@ -164,4 +165,4 @@ const ResponsiveAppBar = () => {
         </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default NavBar;
