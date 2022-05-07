@@ -12,7 +12,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
   latestFavoritesGames = games,
 }) => (
         <div className="HomeTemplate">
-            <h1 className="HomeTemplate-title">
+            <h1 className="HomeTemplate-title" data-testid="video-games-catalog">
                 Welcome in your <strong style={{ color: '#494949' }}>Video Games Catalog</strong>
             </h1>
             <hr />
