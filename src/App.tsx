@@ -1,27 +1,22 @@
 import React from 'react';
 import './App.css';
-import { useRoutes, BrowserRouter as Router } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import NavBar from './components/molecules/NavBar/NavBar';
-import Games from './pages/Games/Games';
-import Platforms from './pages/Platforms/Platforms';
-import FavoritesGames from './pages/FavoritesGames/FavoritesGames';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import NavBar, { pages } from './components/molecules/NavBar/NavBar';
 
 const AppRoute = () => {
-  const routes = useRoutes([
-    { path: '/', element: <Home /> },
-    { path: '/games', element: <Games /> },
-    { path: '/platforms', element: <Platforms /> },
-    { path: '/favorites-games', element: <FavoritesGames /> },
+  return useRoutes([
+    { path: pages[0].url, element: pages[0].element },
+    { path: pages[1].url, element: pages[1].element },
+    { path: pages[2].url, element: pages[2].element },
+    { path: pages[3].url, element: pages[3].element },
   ]);
-  return routes;
 };
 
 const App = () => {
   return (
     <div className="App">
-      <NavBar />
           <Router>
+              <NavBar />
               <AppRoute />
           </Router>
     </div>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,24 +15,16 @@ import MenuItem from '@mui/material/MenuItem';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './NavBar.scss';
 import { useState } from 'react';
+import Home from '../../../pages/Home/Home';
+import Games from '../../../pages/Games/Games';
+import Platforms from '../../../pages/Platforms/Platforms';
+import FavoritesGames from '../../../pages/FavoritesGames/FavoritesGames';
 
-const pages = [
-  {
-    name: 'Home',
-    url: '/',
-  },
-  {
-    name: 'Games',
-    url: '/games',
-  },
-  {
-    name: 'Platforms',
-    url: '/platforms',
-  },
-  {
-    name: 'Favorites Games',
-    url: '/favorites-games',
-  },
+export const pages = [
+  { name: 'Home', url: '/', element: <Home/> },
+  { name: 'Games', url: '/games', element: <Games/> },
+  { name: 'Platforms', url: '/platforms', element: <Platforms/> },
+  { name: 'Favorites Games', url: '/favorites-games', element: <FavoritesGames/> },
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -102,11 +95,11 @@ const NavBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <a key={page.name} style={{ textDecoration: 'none' }} href={page.url}>
+                                <Link key={page.name} to={page.url}>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
-                                </a>
+                                </Link>
                             ))}
                         </Menu>
                     </Box>
@@ -119,22 +112,22 @@ const NavBar = () => {
                         <SportsEsportsIcon fontSize="large" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <a key={page.name} href={page.url}>
+                         {pages.map((page) => (
+                            <Link to={page.url} key={page.url}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page.name}
                             </Button>
-                            </a>
-                        ))}
+                            </Link>
+                         ))}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Jerome" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Jerome" src="/static/images/avatar" />
                             </IconButton>
                         </Tooltip>
                         <Menu

@@ -1,3 +1,11 @@
 .NavBar {
   background: #373536;
+
+  a {
+    text-decoration: none;
+  }
+
+  .active {
+    background: dimgrey;
+  }
 }
