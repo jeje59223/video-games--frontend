@@ -2,10 +2,10 @@ import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import { Story } from '@storybook/react';
-import Btn, { BtnProps } from './Btn';
+import Btn, { BtnProps } from '../../../components/atoms/Button/Btn';
 
 export default {
-  title: 'Atoms/Button Material UI',
+  title: 'Atoms/Button',
   component: Btn,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import NavBar from './NavBar';
+import NavBar from '../../../components/molecules/NavBar/NavBar';
 
 export default {
   title: 'Molecules/NavBar',
