@@ -1,13 +1,16 @@
 import { convertsRatioToStatus } from './convertsRatingToPercent';
+import {
+  gold, red, green, orange,
+} from '../../../colors/colors';
 
 export const generateRatingColor = (ratio: number): string => {
   const status = convertsRatioToStatus(ratio);
   if (status === 'Very good') {
-    return '#FFD700';
+    return gold;
   } if (status === 'Good') {
-    return '#4dd4ac';
+    return green;
   } if (status === 'Middle') {
-    return '#fd7e14';
+    return orange;
   }
-  return '#dc3545';
+  return red;
 };
