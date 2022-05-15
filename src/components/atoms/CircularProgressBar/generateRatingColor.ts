@@ -1,11 +1,12 @@
 import { convertsRatioToStatus } from './convertsRatingToPercent';
 
 export const generateRatingColor = (ratio: number): string => {
-  if (convertsRatioToStatus(ratio) === 'Very good') {
+  const status = convertsRatioToStatus(ratio);
+  if (status === 'Very good') {
     return '#FFD700';
-  } if (convertsRatioToStatus(ratio) === 'Good') {
+  } if (status === 'Good') {
     return '#4dd4ac';
-  } if (convertsRatioToStatus(ratio) === 'Middle') {
+  } if (status === 'Middle') {
     return '#fd7e14';
   }
   return '#dc3545';
