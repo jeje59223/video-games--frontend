@@ -1,14 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { HomeTemplate, HomeTemplateProps } from './HomeTemplate';
-
-const Template: Story<HomeTemplateProps> = (args) => <HomeTemplate {...args}/>;
-
-export const HomeStory = Template.bind({});
-HomeStory.storyName = 'Home';
-// HomeStory.args = {latestFavoritesGames: [], ...latestFavoritesGames}
+import { HomeTemplate as HomeTemplateComponent, HomeTemplateProps } from './HomeTemplate';
 
 export default {
   title: 'Templates/Home',
-  component: HomeTemplate,
+  component: HomeTemplateComponent,
 } as Meta;
+
+export const Home: Story<HomeTemplateProps> = (args) => <HomeTemplateComponent {...args} />;
