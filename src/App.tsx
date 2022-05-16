@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import NavBar, { pages } from './components/molecules/NavBar/NavBar';
 
