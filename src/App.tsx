@@ -3,12 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import NavBar, { pages } from './components/molecules/NavBar/NavBar';
 
-const routes = pages.map((page) => {
-  return {
-    path: page.url,
-    element: page.element,
-  };
-});
+const routes = pages.map((page) => ({ path: page.url, element: page.element }));
 
 const AppRoute = () => {
   return useRoutes(routes);
