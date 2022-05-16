@@ -8,17 +8,19 @@ export interface TagProps {
     label: React.ReactNode;
     size: 'small' | 'medium';
     variant: 'filled' | 'outlined';
+    className?: string;
 }
 
 const Tag: React.FC<TagProps> = ({
-  color,
+  color = 'info',
   icon,
   label,
   size,
   variant,
+  className,
 }) => {
   return (
-        <Chip color={color} icon={icon} label={label} size={size} variant={variant} />
+        <Chip className={className} color={color} icon={icon} label={label} size={size} variant={variant} />
   );
 };
 
