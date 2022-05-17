@@ -6,14 +6,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from '../../atoms/Tag/Tag';
 import CircularProgressbar from '../../atoms/CircularProgressBar/CircularProgressBar';
+import { Game, Genre } from '../../../models/game';
 
 export interface GameCardProps {
   background_image: string;
   title: string;
   description?: string;
-  genres?: string[];
-  rating: number;
-  rating_count: number;
+  genres?: Genre['name'][];
+  rating: Game['rating'];
+  rating_count: Game['ratings_count'];
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -30,22 +31,32 @@ const GameCard: React.FC<GameCardProps> = ({
     setClicked(!clicked);
   };
 
+  function getGenres() {
+    return <>
+      {
+        genres ? genres.map((genre, index) => (
+          <Tag key={index} label={genre} size="small" variant="filled"/>
+        )) : null
+      }
+    </>;
+  }
+
   return (
     <Card className="GameCard">
       <CardActionArea>
         <CardMedia
-          component="img"
-          height="200"
-          image={background_image}
-          alt={title}
-          className="GameCard-image"
+            component="img"
+            height="200"
+            image={background_image}
+            alt={title}
+            className="GameCard-image"
         />
         <Tooltip title={clicked ? 'Delete to Favorites' : 'Add to Favorites'} placement="top-end" arrow>
-          <div className="GameCard-heart" >
-            <FavoriteIcon onClick={addFavorite} color={clicked ? 'error' : 'inherit'} />
+          <div className="GameCard-heart">
+            <FavoriteIcon onClick={addFavorite} color={clicked ? 'error' : 'inherit'}/>
           </div>
         </Tooltip>
-        <CircularProgressbar rating={rating} ratings_count={rating_count} />
+        <CircularProgressbar rating={rating} ratings_count={rating_count}/>
         <CardContent className="GameCard-title">
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -56,10 +67,8 @@ const GameCard: React.FC<GameCardProps> = ({
         </CardContent>
         <hr/>
         <CardContent className="GameCard-footer">
-          <Stack>
-          {genres ? genres.map((genre, index) => (
-                <Tag key={index} label={genre} size="small" variant="filled"/>
-          )) : null}
+          <Stack direction="row" flexWrap="wrap">
+            {getGenres()}
           </Stack>
         </CardContent>
       </CardActionArea>
