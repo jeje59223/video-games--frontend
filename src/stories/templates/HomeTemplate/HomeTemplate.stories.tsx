@@ -1,6 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { HomeTemplate as HomeTemplateComponent, HomeTemplateProps } from './HomeTemplate';
+import {
+  HomeTemplate as HomeTemplateComponent,
+  HomeTemplateProps,
+} from '../../../components/templates/home-template/HomeTemplate';
 
 export default {
   title: 'Templates/Home',

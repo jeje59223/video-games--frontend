@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import CircularProgressbar from './CircularProgressBar';
+import CircularProgressbar from '../../../components/atoms/CircularProgressBar/CircularProgressBar';
 
 export default {
   title: 'Atoms/CircularProgressbar',
