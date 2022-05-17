@@ -6,13 +6,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
 import Tag from '../../atoms/Tag/Tag';
 import CircularProgressbar from '../../atoms/CircularProgressBar/CircularProgressBar';
-import { Game } from '../../../models/game';
+import { Game, Genre } from '../../../models/game';
 
 export interface GameCardProps {
   background_image: string;
   title: string;
   description?: string;
-  genres?: Game['genres'];
+  genres?: Genre['name'][];
   rating: Game['rating'];
   rating_count: Game['ratings_count'];
 }
