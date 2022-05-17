@@ -1,10 +1,16 @@
-export const generateRatingColor = (percentageRating: number): string => {
-  if (percentageRating >= 85) {
-    return '#FFD700';
-  } if (percentageRating >= 70 && percentageRating < 85) {
-    return '#4dd4ac';
-  } if (percentageRating < 70 && percentageRating >= 50) {
-    return '#fd7e14';
+import { convertsRatioToStatus } from './convertsRatingToPercent';
+import {
+  gold, red, green, orange,
+} from '../../../colors/colors';
+
+export const generateRatingColor = (ratio: number): string => {
+  const status = convertsRatioToStatus(ratio);
+  if (status === 'Very good') {
+    return gold;
+  } if (status === 'Good') {
+    return green;
+  } if (status === 'Middle') {
+    return orange;
   }
-  return '#dc3545';
+  return red;
 };
