@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -95,11 +95,11 @@ const NavBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <Link key={page.name} to={page.url}>
+                                <NavLink key={page.name} to={page.url}>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
-                                </Link>
+                                </NavLink>
                             ))}
                         </Menu>
                     </Box>
@@ -113,14 +113,14 @@ const NavBar = () => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                          {pages.map((page) => (
-                            <Link to={page.url} key={page.url}>
+                            <NavLink to={page.url} key={page.url}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page.name}
                             </Button>
-                            </Link>
+                            </NavLink>
                          ))}
                     </Box>
 
