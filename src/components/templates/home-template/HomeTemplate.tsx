@@ -12,8 +12,8 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
   latestFavoritesGames = games,
 }) => (
         <div className="HomeTemplate">
-            <h1 className="HomeTemplate-title">
-                Welcome in your <strong style={{ color: '#494949' }}>Games Catalog</strong>
+            <h1 className="HomeTemplate-title" data-testid="video-games-catalog">
+                Welcome in your <strong>Video Games Catalog</strong>
             </h1>
             <hr />
             <h2 className="HomeTemplate-subtitle">Here are your latest favorite games</h2>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,15 +14,26 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './NavBar.scss';
+import { useState } from 'react';
+import Home from '../../../pages/Home/Home';
+import Games from '../../../pages/Games/Games';
+import Platforms from '../../../pages/Platforms/Platforms';
+import FavoritesGames from '../../../pages/FavoritesGames/FavoritesGames';
 
-const pages = ['Games', 'Platforms', 'Favorites Games'];
+export const pages = [
+  { name: 'Home', url: '/', element: <Home/> },
+  { name: 'Games', url: '/games', element: <Games/> },
+  { name: 'Platforms', url: '/platforms', element: <Platforms/> },
+  { name: 'Favorites Games', url: '/favorites-games', element: <FavoritesGames/> },
+];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+const NavBar = () => {
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
     null,
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(
     null,
   );
 
@@ -42,7 +54,7 @@ const ResponsiveAppBar = () => {
 
   return (
         <AppBar position="static">
-            <Container maxWidth="xl" className="NavBar">
+            <Container maxWidth={false} className="NavBar">
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"
@@ -83,9 +95,11 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <NavLink key={page.name} to={page.url}>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
+                                </NavLink>
                             ))}
                         </Menu>
                     </Box>
@@ -98,21 +112,22 @@ const ResponsiveAppBar = () => {
                         <SportsEsportsIcon fontSize="large" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                         {pages.map((page) => (
+                            <NavLink to={page.url} key={page.url}>
                             <Button
-                                key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
-                        ))}
+                            </NavLink>
+                         ))}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Jerome" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Jerome" src="/static/images/avatar" />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -143,4 +158,4 @@ const ResponsiveAppBar = () => {
         </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default NavBar;

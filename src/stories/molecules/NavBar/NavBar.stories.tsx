@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Story } from '@storybook/react';
 import NavBar from '../../../components/molecules/NavBar/NavBar';
 
@@ -10,7 +11,11 @@ export default {
   },
 };
 
-const Template: Story = (args) => <NavBar {...args} />;
+const Template: Story = (args) => (
+    <Router>
+      <NavBar {...args} />
+    </Router>
+);
 
 export const NavBarGames = Template.bind({});
 NavBarGames.args = {

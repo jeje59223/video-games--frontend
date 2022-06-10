@@ -1,11 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import NavBar, { pages } from './components/molecules/NavBar/NavBar';
 
-function App() {
+const routes = pages.map((page) => ({ path: page.url, element: page.element }));
+
+const AppRoute = () => {
+  return useRoutes(routes);
+};
+
+const App = () => {
   return (
     <div className="App">
-      <h1>Video Games Catalog</h1>
+          <Router>
+              <NavBar />
+              <AppRoute />
+          </Router>
     </div>
   );
-}
+};
 
 export default App;
