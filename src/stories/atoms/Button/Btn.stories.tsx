@@ -1,8 +1,8 @@
 import React from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
 import { Story } from '@storybook/react';
 import Btn, { BtnProps } from '../../../components/atoms/Button/Btn';
+import { XboxOne } from '../../../components/atoms/icons/XboxOne';
+import { Atari } from '../../../components/atoms/icons/Atari';
 
 export default {
   title: 'Atoms/Button',
@@ -36,7 +36,7 @@ BtnContainedLargeWithIcon.args = {
   variant: 'contained',
   label: 'Delete',
   color: 'error',
-  icon: <DeleteIcon/>,
+  icon: <XboxOne size="16px" fill="white" />,
   size: 'large',
 };
 
@@ -44,6 +44,6 @@ export const BtnSmallWithIcon = Template.bind({});
 BtnSmallWithIcon.args = {
   label: 'Add',
   color: 'primary',
-  icon: <AddIcon/>,
+  icon: <Atari size="24px" fill="#1565c0"/>,
   size: 'small',
 };
