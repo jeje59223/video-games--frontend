@@ -35,7 +35,7 @@ const GameCard: React.FC<GameCardProps> = ({
     return <>
       {
         genres ? genres.map((genre, index) => (
-          <Tag key={index} label={genre} size="small" variant="filled"/>
+          <Tag key={index} label={genre} size="small" variant="outlined" color='default'/>
         )) : null
       }
     </>;
