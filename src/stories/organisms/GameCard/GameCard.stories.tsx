@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Story } from '@storybook/react';
 import GameCard, { GameCardProps } from '../../../components/organisms/GameCard/GameCard';
 import { games } from '../../../../.storybook/data/games';
@@ -8,6 +9,14 @@ const game = games[3];
 export default {
   title: 'Organisms/GameCard',
   component: GameCard,
+  decorators: [
+    // @ts-ignore
+    (ComponentStory) => (
+      <Router>
+        <ComponentStory />
+      </Router>
+    ),
+  ],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },

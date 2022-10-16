@@ -1,11 +1,13 @@
+@import "src/styles/variables";
+
 .NavBar {
-  background: #373536;
+  background: $dark-grey;
 
   a {
     text-decoration: none;
   }
 
   .active {
-    background: #494949;
+    background: $super-dark-grey;
   }
 }

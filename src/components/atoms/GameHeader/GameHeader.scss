@@ -1,0 +1,61 @@
+.GameHeader {
+  height: 450px;
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  background: dimgray;
+
+  &--image {
+    position: relative;
+    height: 100%;
+    min-width: 400px;
+    width: 50%;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  &-informations {
+    position: relative;
+    max-height: 500px;
+    width: 50%;
+
+    &--logo {
+      position: absolute;
+      top: 48px;
+      left: -48px;
+      min-width: 96px;
+      width: 96px;
+      flex-basis: 96px;
+      height: 96px;
+    }
+
+    &--title {
+      padding: 3rem 4rem;
+      max-height: 100%;
+      background: #494949;
+      color: white;
+
+      .MuiChip-root {
+        border-color: white;
+        color: white;
+        background: #373536;
+      }
+
+      &--platforms {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 10px;
+      }
+    }
+
+    .CircleProgressbar {
+      width: 80px;
+      color: white;
+      position: absolute;
+      top: 60px;
+      left: -40px;
+
+    }
+  }
+}

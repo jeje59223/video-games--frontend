@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './GameCard.scss';
+import { Link } from 'react-router-dom';
 import Tag from '../../atoms/Tag/Tag';
 import CircularProgressbar from '../../atoms/CircularProgressBar/CircularProgressBar';
 import { Game, Genre } from '../../../models/game';
@@ -15,15 +16,18 @@ export interface GameCardProps {
   genres?: Genre['name'][];
   rating: Game['rating'];
   rating_count: Game['ratings_count'];
+  released: Game['released'];
+  id: Game['id']
 }
 
 const GameCard: React.FC<GameCardProps> = ({
   background_image,
   title,
-  description,
   genres,
   rating,
   rating_count,
+  released,
+  id,
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -42,6 +46,7 @@ const GameCard: React.FC<GameCardProps> = ({
   }
 
   return (
+    <Link to={`/game/${id}`}>
     <Card className="GameCard">
       <CardActionArea>
         <CardMedia
@@ -57,12 +62,12 @@ const GameCard: React.FC<GameCardProps> = ({
           </div>
         </Tooltip>
         <CircularProgressbar rating={rating} ratings_count={rating_count}/>
-        <CardContent className="GameCard-title">
-          <Typography gutterBottom variant="h5" component="div">
+        <CardContent>
+          <Typography className="GameCard-title" gutterBottom variant="h5">
             {title}
           </Typography>
-          <Typography variant="body2" color="white">
-            {description}
+          <Typography className="GameCard-released" variant="body2" color="white">
+            {released}
           </Typography>
         </CardContent>
         <hr/>
@@ -73,6 +78,7 @@ const GameCard: React.FC<GameCardProps> = ({
         </CardContent>
       </CardActionArea>
     </Card>
+    </Link>
   );
 };
 

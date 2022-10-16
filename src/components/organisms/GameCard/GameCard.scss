@@ -57,12 +57,15 @@
   margin: 0 6px 6px 0;
   }
 
-  .MuiTypography-root {
-    font-size: 1.2rem;
+  .MuiCardContent-root {
+    .GameCard-title {
+      font-size: 1.2rem;
+      min-height: 65px;
+    }
   }
 
-  &-title {
-    min-height: 65px;
+  &-released {
+    font-size: 0.5rem;
   }
 
   &-footer {
