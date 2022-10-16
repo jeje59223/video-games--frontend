@@ -19,12 +19,31 @@ import Home from '../../../pages/Home/Home';
 import Games from '../../../pages/Games/Games';
 import Platforms from '../../../pages/Platforms/Platforms';
 import FavoritesGames from '../../../pages/FavoritesGames/FavoritesGames';
+import Game from '../../../pages/Game/Game';
 
-export const pages = [
-  { name: 'Home', url: '/', element: <Home/> },
-  { name: 'Games', url: '/games', element: <Games/> },
-  { name: 'Platforms', url: '/platforms', element: <Platforms/> },
-  { name: 'Favorites Games', url: '/favorites-games', element: <FavoritesGames/> },
+interface Pages {
+  id: number;
+  name: string;
+  url: string;
+  element: React.ReactElement;
+}
+
+export const pages: Pages[] = [
+  {
+    id: 1, name: 'Home', url: '/', element: <Home/>,
+  },
+  {
+    id: 2, name: 'Games', url: '/games', element: <Games/>,
+  },
+  {
+    id: 3, name: 'Platforms', url: '/platforms', element: <Platforms/>,
+  },
+  {
+    id: 4, name: 'Favorites Games', url: '/favorites-games', element: <FavoritesGames/>,
+  },
+  {
+    id: 5, name: 'Game', url: '/game/:id', element: <Game/>,
+  },
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -50,6 +69,20 @@ const NavBar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const generateItemsMenu = (items: Pages[]) => {
+    const itemsMenu = items.filter((item) => item.id !== 5);
+    return itemsMenu.map((itemMenu) => (
+      <NavLink to={itemMenu.url} key={itemMenu.url}>
+        <Button
+          onClick={handleCloseNavMenu}
+          sx={{ my: 2, color: 'white', display: 'block' }}
+        >
+          {itemMenu.name}
+        </Button>
+      </NavLink>
+    ));
   };
 
   return (
@@ -112,16 +145,7 @@ const NavBar = () => {
                         <SportsEsportsIcon fontSize="large" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                         {pages.map((page) => (
-                            <NavLink to={page.url} key={page.url}>
-                            <Button
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page.name}
-                            </Button>
-                            </NavLink>
-                         ))}
+                      {generateItemsMenu(pages)}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

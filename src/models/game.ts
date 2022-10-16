@@ -2,6 +2,7 @@ export interface Game {
     slug: string,
     name: string,
     playtime: number,
+    description: string,
     platforms: Platform[],
     stores: Store[],
     released: string,
