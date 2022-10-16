@@ -6,10 +6,21 @@ import { emptyGames } from '../../emptyData/Game/emptyGame';
 const Game = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [videoGame, setVideoGame] = useState(emptyGames);
+  const [screenshots, setScreenshots] = useState([]);
   const { id } = useParams();
 
   const getGame = async () => {
     const data = await fetch(`http://localhost:8080/games/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return data.json();
+  };
+
+  const getScreenshots = async () => {
+    const data = await fetch(`http://localhost:8080/games/${id}/screenshots`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -30,16 +41,35 @@ const Game = () => {
       }
       setIsFetching(false);
     };
+    const fetchScreenshots = async () => {
+      setIsFetching(true);
+      try {
+        const result = await getScreenshots();
+        setScreenshots(result.results);
+        console.log('Screen : ', result.results);
+      } catch (e) {
+        console.error('Error : ', e);
+      }
+      setIsFetching(false);
+    };
     fetchGame();
+    fetchScreenshots();
   }, []);
   console.log('GAME : ', videoGame);
+  // @ts-ignore
+  console.log('SCREENSHOTS : ', screenshots);
 
   return (
     <>
       {
         !isFetching
-          // @ts-ignore
-          ? <GameTemplate game={videoGame}/>
+
+          ? <GameTemplate
+            // @ts-ignore
+            game={videoGame}
+            // @ts-ignore
+            screenshots={screenshots}
+          />
           : <p style={{ marginTop: '200px', textAlign: 'center', fontSize: '30px' }}>...loading</p>
       }
     </>

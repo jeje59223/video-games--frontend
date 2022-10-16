@@ -1,0 +1,34 @@
+.GameDescription {
+  &-details {
+    height: 615px;
+    display: flex;
+
+    &--summary {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: dimgray;
+      color: white;
+
+      h2, p {
+        padding: 10px;
+        margin: 0;
+        background: #494949;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        font-weight: bold;
+      }
+    }
+
+    &--image {
+      width: 50%;
+      min-width: 400px;
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+  }
+}
