@@ -13,7 +13,6 @@ const GameTemplate: React.FC<GameTemplateProps> = ({
   game,
   screenshots,
 }) => {
-  // @ts-ignore
   return (
   <div className="GameTemplate">
     <GameHeader

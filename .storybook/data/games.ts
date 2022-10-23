@@ -903,7 +903,19 @@ export const games = [
                 "id": 30342,
                 "image": "https://media.rawg.io/media/screenshots/f63/f6373ee614046d81503d63f167181803.jpg"
             }
-        ]
+        ],
+        developers: [
+      {
+          "id": 9023,
+          "name": "CD PROJEKT RED",
+          "slug": "cd-projekt-red",
+          "games_count": 20,
+          "image_background": "https://media.rawg.io/media/screenshots/602/6029d54b8b920a0c58cb53261acfe3ea.jpg"
+      }
+  ],
+        description_raw: "The third game in a series, it holds nothing back from the player. Open world adventures of the renowned monster slayer Geralt of Rivia are now even on a larger scale. Following the source material more accurately, this time Geralt is trying to find the child of the prophecy, Ciri while making a quick coin from various contracts on the side. Great attention to the world building above all creates an immersive story, where your decisions will shape the world around you.\n\nCD Project Red are infamous for the amount of work they put into their games, and it shows, because aside from classic third-person action RPG base game they provided 2 massive DLCs with unique questlines and 16 smaller DLCs, containing extra quests and items.\n\nPlayers praise the game for its atmosphere and a wide open world that finds the balance between fantasy elements and realistic and believable mechanics, and the game deserved numerous awards for every aspect of the game, from music to direction.",
+        reddit_description: "A subreddit for veterans and new fans alike of The Witcher 3: Wild Hunt as well as for other Witcher games and the franchise in general. Everyone is welcome.",
+        metacritic_url: "https://www.metacritic.com/game/playstation-4/the-witcher-3-wild-hunt",
     },
     {
         "id": 4200,
@@ -2148,7 +2160,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -3452,7 +3464,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -5412,7 +5424,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -5976,7 +5988,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -6411,7 +6423,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -7422,7 +7434,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,
@@ -8137,7 +8149,7 @@ export const games = [
             },
             {
                 "id": 40845,
-                "name": "Partial Controller Support",
+                "name": "Partial GameController Support",
                 "slug": "partial-controller-support",
                 "language": "eng",
                 "games_count": 7957,

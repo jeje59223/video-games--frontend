@@ -2,6 +2,8 @@
 
 .NavBar {
   background: $dark-grey;
+  position: fixed;
+  z-index: 2;
 
   a {
     text-decoration: none;

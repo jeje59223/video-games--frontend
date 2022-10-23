@@ -4,6 +4,7 @@ export interface Game {
     playtime: number,
     description: string,
     description_raw: string,
+    reddit_description: string,
     platforms: Platform[],
     stores: Store[],
     released: string,
@@ -46,7 +47,9 @@ export interface Game {
             image_background: string,
             games_count: number
         }
-    ]
+    ],
+    developers: Developer[],
+    metacritic_url: string,
 }
 
 export interface Platform {
@@ -97,4 +100,11 @@ export interface Genre {
     slug: string,
     image_background: string,
     games_count: number
+}
+
+export interface Developer {
+    id: number,
+    name: string,
+    slug: string,
+    games_count: number,
 }
