@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import GameTemplate from '../../components/templates/game-template/GameTemplate';
+// import GameTemplate from '../../components/templates/game-template/GameTemplate';
 import { emptyGames } from '../../emptyData/Game/emptyGame';
+import { GameTemplateV2 } from '../../components/templates/game-template/GameTemplateV2';
 
 const Game = () => {
   const [isFetching, setIsFetching] = useState(false);
@@ -58,16 +59,16 @@ const Game = () => {
   console.log('GAME : ', videoGame);
   // @ts-ignore
   console.log('SCREENSHOTS : ', screenshots);
+  console.log('SCREENSHOTS [0] : ', screenshots[0]);
 
   return (
     <>
       {
         !isFetching
 
-          ? <GameTemplate
+          ? <GameTemplateV2
             // @ts-ignore
             game={videoGame}
-            // @ts-ignore
             screenshots={screenshots}
           />
           : <p style={{ marginTop: '200px', textAlign: 'center', fontSize: '30px' }}>...loading</p>

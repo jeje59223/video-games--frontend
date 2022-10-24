@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { GameTemplateV2, GameTemplateV2Props } from '../../../components/templates/GameTemplateV2';
+import { GameTemplateV2, GameTemplateV2Props } from '../../../components/templates/game-template/GameTemplateV2';
 import { games } from '../../../../.storybook/data/games';
 
 const game = games[1];

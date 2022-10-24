@@ -1,5 +1,5 @@
 import React from 'react';
-import { Game, Genre } from '../../../models/game';
+import { Developer, Game, Genre } from '../../../models/game';
 import './GameDetails.scss';
 
 export interface GameDetailsProps {
@@ -7,7 +7,7 @@ export interface GameDetailsProps {
   genres?: Genre[];
   description_raw: Game['description_raw'];
   metacritic_url: string;
-  developers?: Game['developers'];
+  developers?: Developer[];
   reddit_description: Game['reddit_description'];
 }
 
@@ -29,7 +29,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
         <strong>Stores: </strong>{stores?.join(' / ')}
       </p>
       <p>
-        <strong>Developers: </strong>{developers?.join(' / ')}
+        <strong>Developers: </strong>{developers}
       </p>
       <p>{description_raw}</p>
       <a href={metacritic_url}>{metacritic_url}</a>
