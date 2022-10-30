@@ -1,0 +1,14 @@
+.GameRatings {
+  position: absolute;
+  right: 70px;
+  top: 390px;
+
+  &--details {
+    width: 100%;
+
+    canvas {
+      height: 480px !important;
+      width: 720px;
+    }
+  }
+}

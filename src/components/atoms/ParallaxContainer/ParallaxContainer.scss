@@ -1,0 +1,17 @@
+.ParallaxContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 442px;
+  margin-top: -15px;
+
+  &-background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+    filter: blur(2px);
+    transform: scale(1.1);
+  }
+}
