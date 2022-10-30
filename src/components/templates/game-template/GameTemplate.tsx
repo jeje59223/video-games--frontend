@@ -20,8 +20,7 @@ const GameTemplate: React.FC<GameTemplateProps> = ({
       title={game.name}
       rating={game.rating}
       rating_count={game.ratings_count}
-      // @ts-ignore
-      platforms={game.platforms.map((gamePlatforms) => gamePlatforms.platform.name)}
+      platforms={game.platforms}
     />
     <GameDescription
       background_image={game.background_image_additional}

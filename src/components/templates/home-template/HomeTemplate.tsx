@@ -6,14 +6,31 @@ import Btn from '../../atoms/Button/Btn';
 import './HomeTemplate.scss';
 
 export interface HomeTemplateProps {
-  latestFavoritesGames: Game[],
+  bestGamesOfTheMonth: Game[],
   month: string,
 }
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({
-  latestFavoritesGames,
+  bestGamesOfTheMonth,
   month,
 }) => {
+  const displayGameCards = (games: Game[]) => {
+    return (
+      games.map((game) => (
+        <GameCard
+          key={game.id}
+          background_image={game.background_image}
+          title={game.name}
+          genres={game.genres.map((genre) => genre.name)}
+          rating={game.rating}
+          rating_count={game.ratings_count}
+          released={game.released}
+          id={game.id}
+        />
+      ))
+    );
+  };
+
   return (
     <div className="HomeTemplate">
       <h1 className="HomeTemplate-title" data-testid="video-games-catalog">
@@ -31,20 +48,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({
         </div>
       </div>
       <div className="HomeTemplate-favorites-games">
-        {
-          latestFavoritesGames.map((game) => (
-            <GameCard
-              key={game.id}
-              background_image={game.background_image}
-              title={game.name}
-              genres={game.genres.map((genre) => genre.name)}
-              rating={game.rating}
-              rating_count={game.ratings_count}
-              released={game.released}
-              id={game.id}
-            />
-          ))
-        }
+        { displayGameCards(bestGamesOfTheMonth) }
       </div>
     </div>
   );

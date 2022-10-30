@@ -20,5 +20,5 @@ GameHeaderDefault.args = {
   title: game.name,
   rating: game.rating,
   rating_count: game.ratings_count,
-  platforms: game.platforms.map((platform) => platform.platform.name),
+  platforms: game.platforms,
 };

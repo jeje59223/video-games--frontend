@@ -16,5 +16,5 @@ export const GameTitleWrapperDefault = Template.bind({});
 GameTitleWrapperDefault.args = {
   title: game.name,
   released: game.released,
-  platforms: game.platforms.map((platform) => platform.platform.name),
+  platforms: game.platforms,
 };

@@ -17,7 +17,8 @@ const Game = () => {
         'Content-Type': 'application/json',
       },
     });
-    return data.json();
+    if (data.ok) return data.json();
+    throw new Error(data.statusText);
   };
 
   const getScreenshots = async () => {

@@ -3,14 +3,13 @@ import { Game, Platform } from '../../../models/game';
 import CircularProgressbar from '../CircularProgressBar/CircularProgressBar';
 import Tag from '../Tag/Tag';
 import './GameHeader.scss';
-// import Tag from '../Tag/Tag';
 
 export interface GameHeaderProps {
   background_image: Game['background_image'];
   title: Game['name'];
   rating: Game['rating']
   rating_count: Game['ratings_count']
-  platforms?: Platform['name'][]
+  platforms?: Platform[]
 }
 
 const GameHeader: React.FC<GameHeaderProps> = ({
@@ -20,14 +19,6 @@ const GameHeader: React.FC<GameHeaderProps> = ({
   rating_count,
   platforms,
 }) => {
-  // const showPlatforms = (gamePlatforms: Game['platforms']) => {
-  //   gamePlatforms.map((platform) => {
-  //     return (
-  //       <p>{platform.name}</p>
-  //     );
-  //   });
-  // };
-
   return (
     <header className="GameHeader">
       <div className="GameHeader--image" style={{ backgroundImage: `url(${background_image})` }}></div>
@@ -40,7 +31,7 @@ const GameHeader: React.FC<GameHeaderProps> = ({
            <div className="GameHeader-informations--title--platforms">
              {platforms?.map((platform) => {
                return (
-                <Tag color="secondary" label={platform} size="medium" variant="outlined"/>
+                <Tag color="secondary" label={platform.platform.name} size="medium" variant="outlined"/>
                );
              })}
            </div>

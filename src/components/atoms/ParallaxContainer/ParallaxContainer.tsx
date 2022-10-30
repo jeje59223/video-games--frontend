@@ -7,10 +7,16 @@ export interface ParallaxContainerProps {
 
 export const ParallaxContainer: React.FC<ParallaxContainerProps> = ({
   parallax_background,
+  children,
 }) => {
   return (
   <div className="ParallaxContainer">
-    <div className="ParallaxContainer-background" style={{ backgroundImage: `url(${parallax_background})` }}></div>
+    <div
+      className="ParallaxContainer-background"
+      style={{ backgroundImage: `url(${parallax_background})` }}
+    >
+      {children}
+    </div>
   </div>
   );
 };

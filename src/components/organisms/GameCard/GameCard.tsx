@@ -46,9 +46,10 @@ const GameCard: React.FC<GameCardProps> = ({
   }
 
   return (
-    <Link to={`/game/${id}`}>
+
     <Card className="GameCard">
       <CardActionArea>
+        <Link to={`/game/${id}`}>
         <CardMedia
             component="img"
             height="200"
@@ -56,29 +57,31 @@ const GameCard: React.FC<GameCardProps> = ({
             alt={title}
             className="GameCard-image"
         />
+        </Link>
         <Tooltip title={clicked ? 'Delete to Favorites' : 'Add to Favorites'} placement="top-end" arrow>
           <div className="GameCard-heart">
             <FavoriteIcon onClick={addFavorite} color={clicked ? 'error' : 'inherit'}/>
           </div>
         </Tooltip>
         <CircularProgressbar rating={rating} ratings_count={rating_count}/>
-        <CardContent>
-          <Typography className="GameCard-title" gutterBottom variant="h5">
-            {title}
-          </Typography>
-          <Typography className="GameCard-released" variant="body2" color="white">
-            {released}
-          </Typography>
-        </CardContent>
-        <hr/>
-        <CardContent className="GameCard-footer">
-          <Stack direction="row" flexWrap="wrap">
-            {getGenres()}
-          </Stack>
-        </CardContent>
+        <Link to={`/game/${id}`}>
+          <CardContent>
+            <Typography className="GameCard-title" gutterBottom variant="h5">
+              {title}
+            </Typography>
+            <Typography className="GameCard-released" variant="body2" color="white">
+              {released}
+            </Typography>
+          </CardContent>
+          <hr/>
+          <CardContent className="GameCard-footer">
+            <Stack direction="row" flexWrap="wrap">
+              {getGenres()}
+            </Stack>
+          </CardContent>
+        </Link>
       </CardActionArea>
     </Card>
-    </Link>
   );
 };
 

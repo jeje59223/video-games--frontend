@@ -6,7 +6,7 @@ import './GameTitleWrapper.scss';
 export interface GameTitleWrapperProps {
   title: string;
   released: string;
-  platforms: Platform['name'][];
+  platforms: Platform[];
 }
 export const GameTitleWrapper: React.FC<GameTitleWrapperProps> = ({
   title,
@@ -21,7 +21,7 @@ export const GameTitleWrapper: React.FC<GameTitleWrapperProps> = ({
         <div className="GameTitleWrapper--title-platforms">
           {platforms.map((platform) => {
             return (
-              <Tag color="info" label={platform} size="medium" variant="filled"/>
+              <Tag color="info" label={platform.platform.name} size="medium" variant="filled"/>
             );
           })}
         </div>
