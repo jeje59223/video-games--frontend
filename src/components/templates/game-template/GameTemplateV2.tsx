@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Screenshots } from '../../../models/screenshots';
 import { ParallaxContainer } from '../../atoms/ParallaxContainer/ParallaxContainer';
 import { GameCover } from '../../atoms/GameCover/GameCover';
