@@ -1,15 +1,15 @@
 import React from 'react';
-import { Game } from '../../../models/game';
 import { Screenshots } from '../../../models/screenshots';
 import { ParallaxContainer } from '../../atoms/ParallaxContainer/ParallaxContainer';
 import { GameCover } from '../../atoms/GameCover/GameCover';
-import { GameTitleWrapper } from '../../atoms/GameTitleWrapper/GameTitleWrapper';
 import { GameDetails } from '../../atoms/GameDetails/GameDetails';
 import { GameRatings } from '../../molecules/GameRatings/GameRatings';
 import './GameTemplateV2.scss';
+import { GameTitleWrapper } from '../../atoms/GameTitleWrapper/GameTitleWrapper';
+import { gameDetailsById } from '../../../models/gameDetailsById';
 
 export interface GameTemplateV2Props {
-  game: Game,
+  game: gameDetailsById,
   screenshots: Screenshots[]
 }
 
@@ -17,35 +17,27 @@ export const GameTemplateV2: React.FC<GameTemplateV2Props> = ({
   game,
   screenshots,
 }) => {
-  // eslint-disable-next-line no-lone-blocks
-  { console.log('Template', screenshots); }
   return (
   <div className="GameTemplateV2">
-    {/* TODO remettre le screenshots[0].image */}
-    <ParallaxContainer
-      parallax_background={screenshots[0] ? screenshots[0].image : game.background_image_additional}
-    />
+    <ParallaxContainer parallax_background={screenshots[0] ? screenshots[0].image : game.background_image_additional}>
+      <GameTitleWrapper
+        title={game.name}
+        released={game.released}
+        platforms={game.platforms}
+      />
+    </ParallaxContainer>
     <GameCover
       owned={game.added_by_status?.owned}
       toPlay={game.added_by_status?.toplay}
       playing={game.added_by_status?.playing}
       cover={game.background_image}
       />
-    <GameTitleWrapper
-      title={game.name}
-      released={game.released}
-      // @ts-ignore
-      platforms={game.platforms.map((gamePlatforms) => gamePlatforms.platform.name)}
-    />
     <GameDetails
-      // @ts-ignore
-      stores={game.stores.map((s) => s.store.name)}
-      // @ts-ignore
-      genres={game.genres.map((g) => g.name)}
+      stores={game.stores}
+      genres={game.genres}
       description_raw={game.description_raw}
       metacritic_url={game.metacritic_url}
-      // @ts-ignore
-      developers={game.developers ? game.developers.map((d) => d.name).join(' / ') : []}
+      developers={game.developers}
       reddit_description={game.reddit_description}
     />
     <GameRatings

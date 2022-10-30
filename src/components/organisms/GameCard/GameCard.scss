@@ -4,6 +4,10 @@
   max-width: 300px;
   min-height: 416px;
 
+  &-title {
+    color: white;
+  }
+
   &-image {
     position: relative;
   }
@@ -51,6 +55,7 @@
   .MuiButtonBase-root {
     background: #494949;
     color: white;
+    text-decoration: none;
   }
 
   .MuiChip-root {
@@ -86,6 +91,7 @@
 
   hr {
     margin: 0 16px;
+    color: white;
   }
 }
 

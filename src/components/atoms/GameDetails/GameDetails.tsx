@@ -23,16 +23,16 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
     <div className="GameDetails">
       <p>{reddit_description}</p>
       <p>
-        <strong>Genres: </strong>{genres?.join(' / ')}
+        <strong>Genres: </strong>{genres?.map((g) => g.name).join(' / ')}
       </p>
       <p>
-        <strong>Stores: </strong>{stores?.join(' / ')}
+        <strong>Stores: </strong>{stores?.map((s) => s.store.name).join(' / ')}
       </p>
       <p>
-        <strong>Developers: </strong>{developers}
+        <strong>Developers: </strong>{developers ? developers.map((d) => d.name).join(' / ') : []}
       </p>
       <p>{description_raw}</p>
-      <a href={metacritic_url}>{metacritic_url}</a>
+      <a href={metacritic_url} target="_blank">{metacritic_url}</a>
     </div>
   );
 };

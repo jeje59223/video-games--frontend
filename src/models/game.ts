@@ -53,15 +53,19 @@ export interface Game {
 }
 
 export interface Platform {
-    id: number,
-    name: string,
-    slug: string,
+    platform: {
+        id: number,
+        name: string,
+        slug: string,
+    }
 }
 
 export interface Store {
-    id: number,
-    name: string,
-    slug: string,
+    store: {
+        id: number,
+        name: string,
+        slug: string,
+    }
 }
 
 export interface Rating {

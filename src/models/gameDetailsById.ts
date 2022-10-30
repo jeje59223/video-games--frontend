@@ -1,4 +1,4 @@
-export interface gameDetails {
+export interface gameDetailsById {
   'id': number,
   'slug': string,
   'name': string,

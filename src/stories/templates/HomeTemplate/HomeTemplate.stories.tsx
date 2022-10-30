@@ -23,5 +23,5 @@ export default {
 export const Home: Story<HomeTemplateProps> = (args) => <HomeTemplateComponent {...args} />;
 Home.args = {
   // @ts-ignore
-  latestFavoritesGames: games,
+  bestGamesOfTheMonth: games,
 };

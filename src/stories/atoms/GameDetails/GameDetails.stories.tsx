@@ -12,7 +12,7 @@ const Template: Story<GameDetailsProps> = (args) => <GameDetails {...args} />;
 
 export const GameDetailsDefault = Template.bind({});
 GameDetailsDefault.args = {
-  stores: game.stores.map((store) => store.store),
+  stores: game.stores,
   description_raw: game.description_raw,
   metacritic_url: game.metacritic_url,
   developers: game.developers,
